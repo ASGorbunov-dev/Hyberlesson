@@ -19,18 +19,18 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="surname")
+    @Column(name = "surname")
     private String surName;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-    @Column(name="midlename")
+    @Column(name = "midlename")
     private String midleName;
-    @Column(name="salary")
+    @Column(name = "salary")
     private Integer salary;
-    @Column(name="position")
+    @Column(name = "position")
     private String position;
-    @Column(name="active")
-    private  Boolean active;
+    @Column(name = "active")
+    private Boolean active;
 
     @Override
     public String toString() {

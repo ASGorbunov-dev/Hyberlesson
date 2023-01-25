@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Main {
     static EmployeeService employeeService = new EmployeeService();
     static Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         while (true) {
             showMenu();
         }
@@ -30,12 +30,14 @@ public class Main {
             System.out.println("Не найдено сотрудника с таким id!");
         }
     }
-    public static void deleteEmployee(){
+
+    public static void deleteEmployee() {
         System.out.println("Введите id сотрудника:");
         Employee employee = employeeService.getById(scanner.nextLong());
         employeeService.deleteEmployee(employee);
     }
-    public static void addEmployee(){
+
+    public static void addEmployee() {
         Employee employee = new Employee();
         System.out.println("Введите Фамилию сотрудника:");
         employee.setSurName(scanner.nextLine());
@@ -60,17 +62,19 @@ public class Main {
         String number = scanner.nextLine();
         try {
             int chose = Integer.parseInt(number);
-            if (number.equals("1")) {
-                showAllEmployee();
-            }
-            if (number.equals("2")) {
-                addEmployee();
-            }
-            if (number.equals("3")){
-                deleteEmployee();
-            }
-            if (number.equals("4")) {
-                showEmployeeById();
+            switch (chose) {
+                case 1:
+                    showAllEmployee();
+                    break;
+                case 2:
+                    addEmployee();
+                    break;
+                case 3:
+                    deleteEmployee();
+                    break;
+                case 4:
+                    showEmployeeById();
+                    break;
             }
         } catch (NumberFormatException e) {
             System.out.println("Не верно введено число!");
