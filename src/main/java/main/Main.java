@@ -80,5 +80,4 @@ public class Main {
             System.out.println("Не верно введено число!");
         }
     }
-// заменить if on switch case.
 }
